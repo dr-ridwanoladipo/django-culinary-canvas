@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# Choices for meal types and item status
 MEAL_TYPE = (
     ("starters", "Starters"),
     ("salads", "Salads"),
@@ -15,6 +16,9 @@ STATUS = (
 
 
 class Item(models.Model):
+    """
+    Represents a menu item in the restaurant.
+    """
     meal = models.CharField(max_length=1000, unique=True)
     description = models.CharField(max_length=2000)
     price = models.DecimalField(max_digits=10, decimal_places=2)
